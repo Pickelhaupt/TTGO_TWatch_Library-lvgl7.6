@@ -391,6 +391,7 @@ LV_ATTRIBUTE_FAST_MEM static void draw_border(const lv_area_t * coords, const lv
     if(dsc->border_opa <= LV_OPA_MIN) return;
     if(dsc->border_width == 0) return;
     if(dsc->border_side == LV_BORDER_SIDE_NONE) return;
+    if(dsc->border_post) return;
 
     int32_t coords_w = lv_area_get_width(coords);
     int32_t coords_h = lv_area_get_height(coords);
@@ -1227,6 +1228,9 @@ static void draw_pattern(const lv_area_t * coords, const lv_area_t * clip, const
         lv_draw_img(coords, clip, NULL, NULL);
         return;
     }
+
+    /*Can't draw zero sized images*/
+    if(img_w == 0 || img_h == 0) return;
 
     lv_area_t coords_tmp;
 
