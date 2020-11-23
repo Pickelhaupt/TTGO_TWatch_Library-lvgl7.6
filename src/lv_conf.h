@@ -48,7 +48,7 @@
 
 /* Default display refresh period.
  * Can be changed in the display driver (`lv_disp_drv_t`).*/
-#define LV_DISP_DEF_REFR_PERIOD      30      /*[ms]*/
+#define LV_DISP_DEF_REFR_PERIOD      10      /*[ms]*/
 
 /* Dot Per Inch: used to initialize default sizes.
  * E.g. a button with width = LV_DPI / 2 -> half inch wide
@@ -676,7 +676,7 @@ typedef void *lv_obj_user_data_t;
 #define LV_USE_PAGE     1
 #if LV_USE_PAGE != 0
 /*Focus default animation time [ms] (0: no animation)*/
-#  define LV_PAGE_DEF_ANIM_TIME     400
+#  define LV_PAGE_DEF_ANIM_TIME     200
 #endif
 
 /*Preload (dependencies: lv_arc, lv_anim)*/
@@ -723,14 +723,14 @@ typedef void *lv_obj_user_data_t;
 #define LV_USE_TABVIEW      1
 #  if LV_USE_TABVIEW != 0
 /*Time of slide animation [ms] (0: no animation)*/
-#  define LV_TABVIEW_DEF_ANIM_TIME    300
+#  define LV_TABVIEW_DEF_ANIM_TIME    200
 #endif
 
 /*Tileview (dependencies: lv_page) */
 #define LV_USE_TILEVIEW     1
 #if LV_USE_TILEVIEW
 /*Time of slide animation [ms] (0: no animation)*/
-#  define LV_TILEVIEW_DEF_ANIM_TIME   300
+#  define LV_TILEVIEW_DEF_ANIM_TIME   200
 #endif
 
 /*Window (dependencies: lv_cont, lv_btn, lv_label, lv_img, lv_page)*/
